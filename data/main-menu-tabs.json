@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Главная",
+    "adress": "/"
+  },
+  {
+    "name": "Наш мастер",
+    "adress": "/master"
+  },
+  {
+    "name": "Клиенты",
+    "adress": "/clients",
+    "items": [
+      {
+        "name": "Фото",
+        "adress": "/clients/photo"
+      },
+      {
+        "name": "Отзывы",
+        "adress": "/clients/reviews"
+      }
+    ]
+  },
+  {
+    "name": "Система скидок",
+    "adress": "/discount"
+  },
+  {
+    "name": "Контакты",
+    "adress": "/contacts"
+  }
+]
