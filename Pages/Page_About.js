@@ -1,12 +1,14 @@
 import React from 'react';
 import NavLink from "react-router-dom/es/NavLink";
+import './Page_About.scss'
+
 
 class Page_About extends React.PureComponent {
           
   render() {
 
     return (
-      <div>
+      <div className={'Page_About'}>
         <h1>сайт о мобильной компании</h1>
         добро пожаловать!
           <h1>сайт о мобильной компании</h1>
