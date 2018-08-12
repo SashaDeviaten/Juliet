@@ -1,32 +1,32 @@
 [
   {
     "name": "Главная",
-    "adress": "/"
+    "path": "/"
   },
   {
     "name": "Наш мастер",
-    "adress": "/master"
+    "path": "/master"
   },
   {
     "name": "Клиенты",
-    "adress": "/clients",
+    "path": "/clients",
     "items": [
       {
         "name": "Фото",
-        "adress": "/clients/photo"
+        "path": "/clients/photo"
       },
       {
         "name": "Отзывы",
-        "adress": "/clients/reviews"
+        "path": "/clients/reviews"
       }
     ]
   },
   {
     "name": "Система скидок",
-    "adress": "/discount"
+    "path": "/discount"
   },
   {
     "name": "Контакты",
-    "adress": "/contacts"
+    "path": "/contacts"
   }
 ]

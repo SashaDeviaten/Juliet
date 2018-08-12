@@ -7,8 +7,25 @@
   align-items: center;
   justify-content: space-between;
 
-  .mainMenuTab {
 
+  .mainMenuTab {
+    height: 100%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 255, 0);
+    transition: .3s ease;
+    font-family: "Comic Sans MS";
+    &:hover {
+      color: blue;
+      border-bottom-color:  rgba(0, 0, 255, 1);
+      cursor: pointer;
+    }
+  }
+
+  .current {
+    color: blue;
+    border-bottom-color:  rgba(0, 0, 255, 1);
   }
 
 }

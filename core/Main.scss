@@ -1,0 +1,15 @@
+body {
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+  margin: 0;
+  .link {
+    color: blue;
+    transition: color 0.3s ease;
+    &:hover {
+      cursor: pointer;
+      color: orange;
+    }
+  }
+}

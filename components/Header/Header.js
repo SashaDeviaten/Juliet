@@ -18,10 +18,10 @@ class Header extends React.PureComponent {
                         <div className={mainClassName + '__logo' + ' col-lg-2 col-12'}>
                             <img src={'../../images/Juliet_Logo.png'}/>
                         </div>
-                        <div className={'col-lg-8 col-12'}>
+                        <div className={'col-lg-7 col-12'}>
                             <MainMenu/>
                         </div>
-                        <div className={'col-lg-2 col-12'}>
+                        <div className={'col-lg-3 col-12'}>
                             <MainInfo/>
                         </div>
                     </div>
