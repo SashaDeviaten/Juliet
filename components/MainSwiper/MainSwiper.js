@@ -65,19 +65,20 @@ class MainSwiper extends React.PureComponent {
 
         return (
             <div className={mainClassName}>
-                    <h1 className="_none">Header</h1>
                     <div className="main-slider swiper-container" ref={assignSwiperContainerRef}>
                         <div className="swiper-wrapper">
-                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Juliet_Logo.png'}/>
-                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Juliet_Logo.png'}/>
-                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Juliet_Logo.png'}/>
+                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Slide6.png'}/>
+                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Slide3.png'}/>
+                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Slide4.png'}/>
+                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Slide1.png'}/>
+                            <img className={'main-slider__slide swiper-slide'} src={'../../images/Slide2.png'}/>
                         </div>
                         <div className="main-slider__btn-next swiper-button-next" ref={assignSwiperNextButtonRef}>
                             <div className="bps-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      viewBox="0 0 1024 1024">
                                     <path
-                                        fill={'#0077ff'}
+                                        fill={'#0000ff'}
                                         transform={`rotate(90, 512,512)`}
                                         d = {"M1024 715.072c0 30.092-12.039 60.185-30.092 84.263-42.132 48.145-120.38 54.171-168.527 6.014l-306.96-282.881-312.986 282.881c-54.171 42.132-126.395 42.132-174.551-6.014-42.132-54.171-42.132-126.395 6.014-174.551l475.487-439.38 475.487 439.38c24.079 24.079 36.118 60.185 36.118 90.288z"}
                                     />
@@ -89,7 +90,7 @@ class MainSwiper extends React.PureComponent {
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      viewBox="0 0 1024 1024">
                                     <path
-                                        fill={'#0077ff'}
+                                        fill={'#0000ff'}
                                         transform={`rotate(270, 512,512)`}
                                         d = {"M1024 715.072c0 30.092-12.039 60.185-30.092 84.263-42.132 48.145-120.38 54.171-168.527 6.014l-306.96-282.881-312.986 282.881c-54.171 42.132-126.395 42.132-174.551-6.014-42.132-54.171-42.132-126.395 6.014-174.551l475.487-439.38 475.487 439.38c24.079 24.079 36.118 60.185 36.118 90.288z"}
                                         />

@@ -1,6 +1,7 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
 
 .MainSwiper {
+  margin-top: 75px;
   .main-slider {
     width: 100%;
     //height: 359px;
@@ -20,12 +21,17 @@
       transition: color .15s ease;
       &:hover {
         color: rgba(255, 255, 255, .7);
+        .bps-icon {
+          opacity: 1;
+        }
       }
 
       .bps-icon {
         position: absolute;
         top: calc(50% - 12px);
         width: 24px;
+        opacity: 0;
+        transition: 0.5s ease;
       }
     }
 
@@ -65,7 +71,7 @@
         }
 
         &.swiper-pagination-bullet-active {
-          background-image: linear-gradient(to left, #00ccff, #0077ff);
+          background-image: linear-gradient(to left, #00ccff, #0000ff);
         }
       }
     }
