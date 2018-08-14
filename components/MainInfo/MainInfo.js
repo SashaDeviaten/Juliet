@@ -11,7 +11,11 @@ class MainInfo extends React.PureComponent {
         return (
             <div className={mainClassName}>
                 <div className={mainClassName + '__adress'}>
+                    <a target="_blank"
+                       className={'link'}
+                       href={'https://goo.gl/maps/xDGoPhaGyiv'}>
                     г.Сморгонь, ул.Ленина 60а
+                    </a>
                 </div>
                 <div className={mainClassName + '__tel'}>
                     <img src = '../../images/vel.png'/>

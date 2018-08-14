@@ -5,6 +5,7 @@ import PagesRouter from "../PageRouter/PageRouter";
 import Header from "../components/Header/Header";
 import './Main.scss'
 import MainSwiper from "../components/MainSwiper/MainSwiper";
+import Footer from "../components/Footer/Footer";
 
 
 class Main extends React.PureComponent {
@@ -17,6 +18,7 @@ class Main extends React.PureComponent {
             <Header/>
             <MainSwiper/>
             <PagesRouter/>
+            <Footer/>
 
 
             {/*<h1>демо работы Redux</h1>*/}
