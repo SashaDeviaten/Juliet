@@ -4,7 +4,7 @@ import './MainPage.scss'
 
 class MainPage extends React.PureComponent {
 
-    mainClassName = 'MainSwiper';
+    mainClassName = 'MainPage';
 
   render() {
       const {mainClassName} = this;

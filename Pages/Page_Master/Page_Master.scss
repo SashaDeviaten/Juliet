@@ -1,0 +1,26 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.Page_Master {
+
+  &__name {
+    text-align: center;
+    font-size: 48px;
+    color: #0000FF;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .master {
+    &__photo {
+      img {
+        width: 100%;
+      }
+    }
+    &__text {
+
+      font: 24px italic;
+      font-family: "Comic Sans MS";
+    }
+  }
+
+}
