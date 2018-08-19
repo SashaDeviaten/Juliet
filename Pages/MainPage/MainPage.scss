@@ -1,5 +1,76 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
 
 .MainPage {
+  img {
+    width: 100%;
+    margin-bottom: -4px;
+  }
 
+  &__tile {
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom:40px;
+
+  }
+
+  .odd {
+    animation: AnimationOdd 8s infinite;
+  }
+
+  .even {
+    animation: AnimationEven 8s infinite;
+  }
+
+
+
+  .titleWrap {
+    display: flex;
+    .mainTitle {
+      text-align: center;
+      font-weight: bold;
+      font-size: 48px;
+      font-style: italic;
+      margin: auto;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 30px;
+    font-style: italic;
+    margin: 20px;
+  }
+
+  .text {
+    text-indent: 25px;
+    margin-left: 20px;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  .intervalImg {
+    img {
+      width: unset;
+      height: 350px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+  }
+
+  .centerText {
+    text-align: center;
+  }
+
+  @keyframes AnimationOdd
+  {
+    from { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    50% { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    to { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+  }
+  @keyframes AnimationEven
+  {
+    from { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    50% { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    to { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+  }
 }
