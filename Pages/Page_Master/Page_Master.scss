@@ -2,25 +2,55 @@
 
 .Page_Master {
 
-  &__name {
-    text-align: center;
-    font-size: 48px;
-    color: #0000FF;
-    font-style: italic;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .master {
-    &__photo {
-      img {
-        width: 100%;
+  .contentWrap {
+    border-radius: 10px;
+    box-shadow: 5px 5px 40px #6EB1FF;
+    margin-top: 40px;
+    margin-bottom:40px;
+
+    .master {
+      &__photo {
+        img {
+          width: 100%;
+        }
+      }
+      &__text {
+        font-style: italic;
+        font-size: 24px;
+        text-align: center;
+      }
+      &__name {
+        text-align: center;
+        font-size: 48px;
+        color: #0000FF;
+        font-style: italic;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      &__ico {
+        text-align: center;
+        img {
+          width: 15%;
+        }
       }
     }
-    &__text {
-
-      font: 24px italic;
-      font-family: "Comic Sans MS";
-    }
   }
 
+  div.prize {
+    box-shadow: 5px 5px 40px #E855A2;
+  }
+
+  .images {
+    img {
+      width: 100%;
+    }
+    .title {
+      text-align: center;
+      font-size: 35px;
+      font-style: italic;
+      font-weight: bold;
+      color: #E855A2;
+      margin: 20px;
+    }
+  }
 }

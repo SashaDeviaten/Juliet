@@ -19,11 +19,6 @@ class Main extends React.PureComponent {
             <MainSwiper/>
             <PagesRouter/>
             <Footer/>
-
-
-            {/*<h1>демо работы Redux</h1>*/}
-            {/*<CounterButton counterid={111} />*/}
-            {/*<CounterButton counterid={222} />*/}
         </div>
 
     );

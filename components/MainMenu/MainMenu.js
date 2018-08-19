@@ -15,9 +15,12 @@ class MainMenu extends React.PureComponent {
 
     };
 
-    state = {
-        activePath:  '/'
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            activePath:  window.location.pathname
+        }
+    }
 
     mainClassName = 'MainMenu';
 
@@ -44,7 +47,6 @@ class MainMenu extends React.PureComponent {
         return (
             <div className={mainClassName}>
                 {buildMenuItems()}
-
             </div>
         );
 
