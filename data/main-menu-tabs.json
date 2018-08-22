@@ -8,25 +8,15 @@
     "path": "/master"
   },
   {
-    "name": "Клиенты",
-    "path": "/clients",
-    "items": [
-      {
-        "name": "Фото",
-        "path": "/clients/photo"
-      },
-      {
-        "name": "Отзывы",
-        "path": "/clients/reviews"
-      }
-    ]
+    "name": "Фото клиентов",
+    "path": "/clients"
   },
   {
     "name": "Система скидок",
     "path": "/discount"
   },
   {
-    "name": "Контакты",
-    "path": "/contacts"
+    "name": "Отзывы",
+    "path": "/reviews"
   }
 ]
