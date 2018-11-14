@@ -4,6 +4,7 @@ import Switch from "react-router-dom/es/Switch";
 import MainPage from "../Pages/MainPage/MainPage";
 import Page_Master from "../Pages/Page_Master/Page_Master";
 import Page_Clients from "../Pages/Page_Clients/Page_Clients";
+import Page_Reviews from "../Pages/Page_Reviews/Page_Reviews.jsx";
 
 class PagesRouter extends React.Component {
 
@@ -14,6 +15,7 @@ class PagesRouter extends React.Component {
                     <Route path="/" exact component={MainPage}/>
                     <Route path="/master" component={Page_Master}/>
                     <Route path="/clients" component={Page_Clients}/>
+                    <Route path="/reviews" component={Page_Reviews}/>
                 </Switch>
         );
 

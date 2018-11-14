@@ -1,0 +1,65 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+.Page_Reviews {
+
+  .flex {
+    display: flex;
+  }
+
+  .ma {
+    margin: auto;
+  }
+
+  .reviewsPhoto {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+
+  .reviewsName {
+    font-size: 26px;
+    font-style: italic;
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .reviewsText {
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  .reviewsDate {
+    text-align: right;
+    font-style: italic;
+    font-size: 16px;
+  }
+
+
+
+  .tile {
+    border-radius: 10px;
+    margin: 40px 20px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .odd {
+    animation: AnimationOdd 8s infinite;
+  }
+
+  .even {
+    animation: AnimationEven 8s infinite;
+  }
+
+  @keyframes AnimationOdd
+  {
+    from { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    50% { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    to { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+  }
+  @keyframes AnimationEven
+  {
+    from { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+    50% { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
+    to { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
+  }
+}
