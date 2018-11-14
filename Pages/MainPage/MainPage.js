@@ -16,7 +16,7 @@ class MainPage extends React.PureComponent {
             <div className={'container'}>
                 <div className={mainClassName + '__tile odd row'}>
                     <div className={'col-lg-3 col-md-5 col-12'}>
-                    <img src={'../../images/mainPage2.png'}/>
+                        <img src={'../../images/mainPage2.png'}/>
                     </div>
             <div className={'col-lg-9 col-md-7 col-12 titleWrap'}>
                 <div className={'mainTitle'}>
