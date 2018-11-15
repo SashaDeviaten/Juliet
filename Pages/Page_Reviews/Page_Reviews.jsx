@@ -1,10 +1,18 @@
-﻿import React, {PureComponent} from 'react';
+﻿import React, {Fragment, PureComponent} from 'react';
 import './Page_Reviews.scss';
 
 
 class Page_Reviews extends PureComponent {
 
     mainClassName = 'Page_Reviews';
+
+    buildStars = (amount = 0) => {
+        if (amount > 5) return null;
+        return <Fragment>
+        {[...Array(amount)].map((s,i) => <div className={'star light'} key={i}/>)}
+        {[...Array(5-amount)].map((s,i) => <div className={'star'} key={i}/>)}
+    </Fragment>
+    };
 
     render() {
         const {mainClassName} = this;
@@ -21,6 +29,7 @@ class Page_Reviews extends PureComponent {
                         </div>
                         <div className={'col-md-9 col-12 flex'}>
                             <div className={'ma'}>
+                                <div className={'reviewsStarsWrap'}>{this.buildStars(5)}</div>
                                 <div className={'reviewsText'}>
                                     Большое спасибо "парикмахеру")))
                                     Стрижка очень понравилась, мастер - просто супер!!! Мы свою девочку первый
@@ -36,6 +45,7 @@ class Page_Reviews extends PureComponent {
                     <div className={mainClassName + ' row even tile'}>
                         <div className={'col-md-9 col-12 flex'}>
                             <div className={'ma'}>
+                                <div className={'reviewsStarsWrap'}>{this.buildStars(4)}</div>
                                 <div className={'reviewsText'}>
                                     Стригу уже не первый раз своего малыша шпица Джоника! Мастер очень внимательный и
                                     знающий свое дело! Спасибо Татьяне за её не легкий труд, и любовь к животным!

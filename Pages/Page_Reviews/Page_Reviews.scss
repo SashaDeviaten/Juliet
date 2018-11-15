@@ -25,12 +25,41 @@
   .reviewsText {
     font-size: 20px;
     font-style: italic;
+    margin-bottom: 20px;
   }
 
   .reviewsDate {
     text-align: right;
     font-style: italic;
     font-size: 16px;
+  }
+
+  .star {
+    height: 25px;
+    width: 25px;
+    margin: 2px;
+    display: inline-block;
+    clip-path: polygon(
+    50% 0%,
+    63% 38%,
+    100% 38%,
+    69% 59%,
+    82% 100%,
+    50% 75%,
+    18% 100%,
+    31% 59%,
+    0% 38%,
+    37% 38%
+    );
+    background-color: gray;
+  }
+
+  .star.light {
+    background-color: yellow;
+  }
+
+  .reviewsStarsWrap {
+    margin-bottom: 20px;
   }
 
 
