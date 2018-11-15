@@ -2,14 +2,6 @@
 
 .Page_Reviews {
 
-  .flex {
-    display: flex;
-  }
-
-  .ma {
-    margin: auto;
-  }
-
   .reviewsPhoto {
     max-width: 100%;
     border-radius: 50%;
@@ -34,61 +26,9 @@
     font-size: 16px;
   }
 
-  .star {
-    height: 25px;
-    width: 25px;
-    margin: 2px;
-    display: inline-block;
-    clip-path: polygon(
-    50% 0%,
-    63% 38%,
-    100% 38%,
-    69% 59%,
-    82% 100%,
-    50% 75%,
-    18% 100%,
-    31% 59%,
-    0% 38%,
-    37% 38%
-    );
-    background-color: gray;
-  }
-
-  .star.light {
-    background-color: yellow;
-  }
 
   .reviewsStarsWrap {
     margin-bottom: 20px;
   }
 
-
-
-  .tile {
-    border-radius: 10px;
-    margin: 40px 20px;
-    width: 100%;
-    padding: 20px;
-  }
-
-  .odd {
-    animation: AnimationOdd 8s infinite;
-  }
-
-  .even {
-    animation: AnimationEven 8s infinite;
-  }
-
-  @keyframes AnimationOdd
-  {
-    from { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
-    50% { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
-    to { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
-  }
-  @keyframes AnimationEven
-  {
-    from { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
-    50% { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
-    to { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
-  }
 }
