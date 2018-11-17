@@ -16,39 +16,49 @@ class Page_Discount extends PureComponent {
                 <div className={'container'}>
                     <div className={mainClassName + ' row odd tile'}>
                         <div className={'col-md-3 col-12'}>
-                            <img className={'reviewsPhoto'}
-                                 src={'../../images/discount/discount2.jpg'}/>
+                            <img src={'../../images/discount/discount3.jpg'}/>
                         </div>
                         <div className={'col-md-9 col-12 flex'}>
                             <div className={'ma'}>
-                                <div className={'reviewsText'}>
-                                    Большое спасибо "парикмахеру")))
-                                    Стрижка очень понравилась, мастер - просто супер!!! Мы свою девочку первый
-                                    раз привели в салон. И ни капельки не пожалели! Я даже не ожидала такого
-                                    замечательного отношения! Татьяна относиться к
-                                    питомцу, как к своему. Большое спасибо! Мы обязательно придем к Вам Еще!
+                                <div className={'discountHeader'}>Акция для новичков!</div>
+                                <div className={'discountDescription'}>
+                                    Весь декабрь время перемен к Новому Году!<br/>
+                                    Побалуйте своего питомца свежей стрижкой к празднику!<br/>
+                                    Всем новым клиентам первая стрижка в нашем салоне c 50%-ой скидкой!
                                 </div>
-                                <div className={'reviewsName'}>Виктория Хвесечко</div>
-                                <div className={'reviewsDate'}>29.11.2018</div>
                             </div>
                         </div>
                     </div>
                     <div className={mainClassName + ' row even tile'}>
                         <div className={'col-md-9 col-12 flex'}>
                             <div className={'ma'}>
-                                <div className={'reviewsText'}>
-                                    Стригу уже не первый раз своего малыша шпица Джоника! Мастер очень внимательный и
-                                    знающий свое дело! Спасибо Татьяне за её не легкий труд, и любовь к животным!
+                                <div className={'discountHeader'}>Приводи друзей!</div>
+                                <div className={'discountDescription'}>
+                                    Если Вам у нас понравилось, расскажите об этом друзьям!<br/>
+                                    Воспользовавшись услугами нашего салона впервые, друзья смогут записать на Ваше имя скидку в 20%!
                                 </div>
-                                <div className={'reviewsName'}>Виктория Девятень</div>
-                                <div className={'reviewsDate'}>14.11.2018</div>
                             </div>
                         </div>
                         <div className={'col-md-3 col-12'}>
                             <img className={'reviewsPhoto'}
-                                 src={'../../images/discount/discount1.jpg'}/>
+                                 src={'../../images/discount/discount2.jpg'}/>
                         </div>
                     </div>
+                    <div className={mainClassName + ' row odd tile'}>
+                        <div className={'col-md-3 col-12'}>
+                            <img src={'../../images/discount/discount1.jpg'}/>
+                        </div>
+                        <div className={'col-md-9 col-12 flex'}>
+                            <div className={'ma'}>
+                                <div className={'discountHeader'}>Поймай скидку!</div>
+                                <div className={'discountDescription'}>
+                                    Периодически на нашем сайте появляется весёлый лающий мопсик)<br/>
+                                    Поймай его  - и получи скидку 5%!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

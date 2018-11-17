@@ -1,7 +1,29 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
 
 .Page_Discount {
-  .reviewsPhoto {
+  img {
     max-width: 100%;
+    margin-bottom: -24px;
+  }
+  .discountHeader {
+    font-size: 36px;
+    font-family: cursive;
+    color: red;
+    animation: AnimationDiscount 2s infinite;
+    margin-bottom: 12px;
+  }
+  .discount {
+    color: red;
+    animation: AnimationDiscount 2s infinite;
+  }
+  .discountDescription {
+    font-style: italic;
+    font-size: 22px;
+  }
+  @keyframes AnimationDiscount
+  {
+    from {opacity: 0.7}
+    50% {opacity: 1}
+    to {opacity: 0.7}
   }
 }
