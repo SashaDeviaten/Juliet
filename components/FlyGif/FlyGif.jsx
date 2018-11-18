@@ -26,12 +26,25 @@ class FlyGif extends PureComponent {
     speedY = 5;
 
     componentDidMount () {
-        this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000)
+        this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
+        window.addEventListener('blur', this.clearGifTimeout);
+        window.addEventListener('focus', this.setGifTimeout)
     }
 
     componentWillUnmount () {
-       clearTimeout(this.timeout)
+        this.clearGifTimeout();
+        window.removeEventListener('blur', this.clearGifTimeout);
+        window.addEventListener('focus', this.setGifTimeout)
     }
+
+    setGifTimeout = () => {
+        this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
+    };
+
+    clearGifTimeout = () => {
+        this.setState({on: false});
+        clearTimeout(this.timeout)
+    };
 
     setRef = (ref) => {this.gifRef = ref};
 
@@ -69,12 +82,18 @@ class FlyGif extends PureComponent {
 
     };
 
+    catchHandler = () => {
+        if (Math.random() < 0.75) {        //да, так немножечко не честно, но что поделаешь!?
+            alert('yes!!!!!!!')
+        }
+    };
+
 
     render() {
 
         return <div className={this.mainClassName}>
             {this.state.on && <img ref={this.setRef}
-                                   onClick={() => {alert('Ура!')} }
+                                   onClick={this.catchHandler}
                                    src={'../../images/flyGif.gif'}/>}
         </div>
     }
