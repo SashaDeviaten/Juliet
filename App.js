@@ -10,7 +10,7 @@ import {createStore} from "redux";
 import combinedReducer from "./core/reducers";
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
 
-let store=createStore(combinedReducer);
+const store = createStore(combinedReducer, {}, window.devToolsExtension ? window.devToolsExtension() : f => f);
 
 ReactDOM.render(
     <Provider store={store}>
