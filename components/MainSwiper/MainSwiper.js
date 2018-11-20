@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
 
 import './MainSwiper.scss';
+import {connect} from "react-redux";
 
 class MainSwiper extends React.PureComponent {
 
@@ -18,11 +18,11 @@ class MainSwiper extends React.PureComponent {
             speed: 1800,
             roundLengths: true,
             autoplay: {
-                delay: 5000
+                delay: 7000
             },
             pagination: {
                 clickable: true
-            }
+            },
         },
     };
 
@@ -42,6 +42,10 @@ class MainSwiper extends React.PureComponent {
         });
     }
 
+    componentDidUpdate () {
+        this.props.isShowFlyGif ? this.swiper.detachEvents() : this.swiper.attachEvents()
+    }
+
     nodes = {};
 
     swiper = null;
@@ -58,9 +62,6 @@ class MainSwiper extends React.PureComponent {
         const {
             mainClassName,
             assignSwiperContainerRef, assignSwiperPrevButtonRef, assignSwiperNextButtonRef, assignSwiperPaginationRef,
-            nodes,
-            props: {slides},
-            props: {swiperProps: {pagination, navigation}, small}
         } = this;
 
         return (
@@ -73,31 +74,31 @@ class MainSwiper extends React.PureComponent {
                             <img className={'main-slider__slide swiper-slide'} src={'../../images/Slide1.png'}/>
                             <img className={'main-slider__slide swiper-slide'} src={'../../images/Slide2.png'}/>
                         </div>
-                        <div className="main-slider__btn-next swiper-button-next" ref={assignSwiperNextButtonRef}>
-                            <div className="bps-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     viewBox="0 0 1024 1024">
-                                    <path
-                                        fill={'#0000ff'}
-                                        transform={`rotate(90, 512,512)`}
-                                        d = {"M1024 715.072c0 30.092-12.039 60.185-30.092 84.263-42.132 48.145-120.38 54.171-168.527 6.014l-306.96-282.881-312.986 282.881c-54.171 42.132-126.395 42.132-174.551-6.014-42.132-54.171-42.132-126.395 6.014-174.551l475.487-439.38 475.487 439.38c24.079 24.079 36.118 60.185 36.118 90.288z"}
-                                    />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="main-slider__btn-prev swiper-button-prev" ref={assignSwiperPrevButtonRef}>
-                            <div className="bps-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     viewBox="0 0 1024 1024">
-                                    <path
-                                        fill={'#0000ff'}
-                                        transform={`rotate(270, 512,512)`}
-                                        d = {"M1024 715.072c0 30.092-12.039 60.185-30.092 84.263-42.132 48.145-120.38 54.171-168.527 6.014l-306.96-282.881-312.986 282.881c-54.171 42.132-126.395 42.132-174.551-6.014-42.132-54.171-42.132-126.395 6.014-174.551l475.487-439.38 475.487 439.38c24.079 24.079 36.118 60.185 36.118 90.288z"}
+                            <div className="main-slider__btn-next swiper-button-next" ref={assignSwiperNextButtonRef}>
+                                <div className="bps-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         viewBox="0 0 1024 1024">
+                                        <path
+                                            fill={'#0000ff'}
+                                            transform={`rotate(90, 512,512)`}
+                                            d = {"M1024 715.072c0 30.092-12.039 60.185-30.092 84.263-42.132 48.145-120.38 54.171-168.527 6.014l-306.96-282.881-312.986 282.881c-54.171 42.132-126.395 42.132-174.551-6.014-42.132-54.171-42.132-126.395 6.014-174.551l475.487-439.38 475.487 439.38c24.079 24.079 36.118 60.185 36.118 90.288z"}
                                         />
-                                </svg>
+                                    </svg>
+                                </div>
                             </div>
-                        </div>
-                        <div className="main-slider__pagination swiper-pagination" ref={assignSwiperPaginationRef}/>
+                            <div className="main-slider__btn-prev swiper-button-prev" ref={assignSwiperPrevButtonRef}>
+                                <div className="bps-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         viewBox="0 0 1024 1024">
+                                        <path
+                                            fill={'#0000ff'}
+                                            transform={`rotate(270, 512,512)`}
+                                            d = {"M1024 715.072c0 30.092-12.039 60.185-30.092 84.263-42.132 48.145-120.38 54.171-168.527 6.014l-306.96-282.881-312.986 282.881c-54.171 42.132-126.395 42.132-174.551-6.014-42.132-54.171-42.132-126.395 6.014-174.551l475.487-439.38 475.487 439.38c24.079 24.079 36.118 60.185 36.118 90.288z"}
+                                            />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="main-slider__pagination swiper-pagination" ref={assignSwiperPaginationRef}/>
                     </div>
 
             </div>
@@ -107,6 +108,6 @@ class MainSwiper extends React.PureComponent {
 
 }
 
-export default MainSwiper;
-
-<glyph unicode="chevron_left" glyph-name="chevron_left" d="M715.068 959.998c30.094 0 60.189-12.037 84.264-30.094 48.151-42.133 54.17-120.377 6.019-168.529l-282.887-306.962 282.887-312.982c42.133-54.17 42.133-126.396-6.019-174.547-54.17-42.133-126.396-42.133-174.547 6.019l-439.378 475.491 439.378 475.491c24.076 24.076 60.189 36.113 90.283 36.113z" />
+export default connect(
+    ({flyGif: {isShow}}) => ({isShowFlyGif: isShow})
+)(MainSwiper);
