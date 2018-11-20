@@ -1,11 +1,9 @@
 ﻿import { combineReducers } from 'redux';
 
-import counterButtonReducer from "../components/CounterButton/counterButtonReducer";
+import flyGif from "../reducers/flyGif";
 
 let combinedReducer=combineReducers({
-    // редьюсер counterButtonReducer отвечает за раздел state под именем counterButton
-    counterButton: counterButtonReducer, 
-    // + другие редьюсеры
+    flyGif,
 });
 
 export default combinedReducer;
