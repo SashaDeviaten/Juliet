@@ -53,7 +53,7 @@ class Page_Discount extends PureComponent {
                                 <div className={'discountHeader'}>Поймай скидку!</div>
                                 <div className={'discountDescription'}>
                                     Периодически на нашем сайте появляется весёлый лающий мопсик)<br/>
-                                    Поймай его  - и получи скидку 5%!
+                                    Поймай его двойным кликом - и получи скидку 5%!
                                 </div>
                             </div>
                         </div>
