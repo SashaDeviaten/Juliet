@@ -1,6 +1,10 @@
 import React, {PureComponent} from 'react';
 import './FlyGif.scss';
-import {getRandomInt} from '../../utils/utils';
+import {connect} from 'react-redux'
+import {generateCode, getRandomInt} from '../../utils/utils';
+import showFlyGif from "../../actions/showFlyGif";
+import blockFlyGif from "../../actions/blockFlyGif";
+import {default as isoFetch} from 'isomorphic-fetch';
 
 const RAF = window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -16,14 +20,15 @@ const Doc = document.documentElement;
 class FlyGif extends PureComponent {
 
     state = {
-        on: false
+        on: false,
     };
 
     timeout = null;
     gifRef = null;
     mainClassName = 'FlyGif';
     speedX = 3;
-    speedY = 5;
+    speedY = 4;
+    isFirstTime=true;
 
     componentDidMount () {
         this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
@@ -32,9 +37,7 @@ class FlyGif extends PureComponent {
     }
 
     componentWillUnmount () {
-        this.clearGifTimeout();
-        window.removeEventListener('blur', this.clearGifTimeout);
-        window.addEventListener('focus', this.setGifTimeout)
+        this.block()
     }
 
     setGifTimeout = () => {
@@ -50,6 +53,7 @@ class FlyGif extends PureComponent {
 
     showGif = () => {
         this.timeout = setTimeout(this.hideGif, 3000 + getRandomInt()*10000);
+        this.props.showFlyGif();
         this.setState({on: true}, () => {
             this.gifRef.style.top = getRandomInt(20 + window.pageYOffset, Doc.clientHeight - (this.gifRef.clientHeight || 150) - 20) + 'px';
             this.gifRef.style.left = getRandomInt(20, Doc.clientWidth - (this.gifRef.clientWidth || 250) - 20) + 'px';
@@ -58,7 +62,15 @@ class FlyGif extends PureComponent {
     };
 
     hideGif = () => {
+        if (this.isFirstTime) {
+            this.isFirstTime = false;
+            if (confirm('Заблокировать летающую картинку со скидкой?')) {
+                this.block();
+                return
+            }
+        }
         this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
+        this.props.hideFlyGif();
         this.setState({on: false})
     };
 
@@ -83,9 +95,18 @@ class FlyGif extends PureComponent {
     };
 
     catchHandler = () => {
-        if (Math.random() < 0.75) {        //да, так немножечко не честно, но что поделаешь!?
-            alert('yes!!!!!!!')
-        }
+            if (confirm('Получить код для скидки?')) {
+                const code = generateCode();
+                // isoFetch
+            }
+            this.block()
+    };
+
+    block = () => {
+        this.props.blockFlyGif();
+        this.clearGifTimeout();
+        window.removeEventListener('blur', this.clearGifTimeout);
+        window.removeEventListener('focus', this.setGifTimeout)
     };
 
 
@@ -93,10 +114,17 @@ class FlyGif extends PureComponent {
 
         return <div className={this.mainClassName}>
             {this.state.on && <img ref={this.setRef}
-                                   onClick={this.catchHandler}
+                                   onDoubleClick={this.catchHandler}
                                    src={'../../images/flyGif.gif'}/>}
         </div>
     }
 }
 
-export default FlyGif
+export default connect(
+    null,
+    dispatch => ({
+        showFlyGif: () => dispatch(showFlyGif(true)),
+        hideFlyGif: () => dispatch(showFlyGif(false)),
+        blockFlyGif: () => dispatch(blockFlyGif()),
+    })
+)(FlyGif);
