@@ -2,6 +2,9 @@
 
 .MainSwiper {
   margin-top: 75px;
+  @media (max-width: 991px) {
+    display: none;
+  }
   .main-slider {
     width: 100%;
     //height: 359px;

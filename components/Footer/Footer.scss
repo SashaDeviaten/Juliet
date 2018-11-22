@@ -4,6 +4,10 @@
   background-image: linear-gradient(to top, #0000FF, white 40%, #0000FF);
   position: relative;
 
+  @media (max-width: 991px) {
+    display: none;
+  }
+
   .leftBlock {
     img {
       width: 75%;
