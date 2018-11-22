@@ -14,4 +14,9 @@
       display: block;
     }
   }
+  .mainInfoWrap {
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
 }

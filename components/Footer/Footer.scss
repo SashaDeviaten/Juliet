@@ -3,9 +3,23 @@
 .Footer {
   background-image: linear-gradient(to top, #0000FF, white 40%, #0000FF);
   position: relative;
-
   @media (max-width: 991px) {
     display: none;
+  }
+  @media (max-width: 576px) {
+    display: block;
+    .leftBlock, .creator {
+      display: none;
+    }
+    .rightBlock {
+      div.location, div.tel {
+        margin-bottom: 0;
+      }
+      .mail {
+        margin-bottom: 20px;
+      }
+    }
+
   }
 
   .leftBlock {

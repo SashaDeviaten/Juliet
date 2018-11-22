@@ -15,10 +15,10 @@ class MainPage extends React.PureComponent {
         <div className={mainClassName}>
             <div className={'container'}>
                 <div className={mainClassName + '__tile odd row'}>
-                    <div className={'col-lg-3 col-md-5 col-12'}>
+                    <div className={'col-md-3 col-sm-12 order-md-1 order-2'}>
                         <img src={'../../images/mainPage2.png'}/>
                     </div>
-            <div className={'col-lg-9 col-md-7 col-12 titleWrap'}>
+            <div className={'col-md-9 col-sm-12 titleWrap order-md-2 order-1'}>
                 <div className={'mainTitle'}>
                 Почему стоит привести к нам своего питомца...
                 </div>
@@ -26,7 +26,7 @@ class MainPage extends React.PureComponent {
                 </div>
 
                 <div className={mainClassName + '__tile even row contentWrap'}>
-                    <div className={'col-lg-9 col-md-7 col-12'}>
+                    <div className={'col-md-9 col-sm-12'}>
                         <div className={'title'}>
                         Ваш пёсик грустит?<br/> Может быть, его просто нужно подстричь?
                         </div>
@@ -40,17 +40,17 @@ class MainPage extends React.PureComponent {
                             позволяет вашему питомцу чувствовать себя более комфортно.
                         </div>
                     </div>
-                    <div className={'col-lg-3 col-md-5 col-12'}>
+                    <div className={'col-md-3 col-sm-12'}>
                         <img src={'../../images/mainPage1.png'}/>
                     </div>
                 </div>
 
                 <div className={mainClassName + '__tile odd row contentWrap'}>
 
-                    <div className={'col-lg-3 col-md-5 col-12'}>
+                    <div className={'col-md-3 col-sm-12'}>
                         <img src={'../../images/mainPage3.png'}/>
                     </div>
-                    <div className={'col-lg-9 col-md-7 col-12'}>
+                    <div className={'col-md-9 col-sm-12'}>
                         <div className={'title'}>
                             Как часто нужно стричь собаку?
                         </div>
@@ -71,18 +71,18 @@ class MainPage extends React.PureComponent {
                     </div>
                 </div>
 
-                <div className={mainClassName + '__tile odd row contentWrap'}>
+                <div className={mainClassName + '__tile odd row contentWrap slideShowWrap'}>
 
                     <div className={'title centerText col-12'}>
                         Почему не стоит пытаться подстричь питомца самому...
                     </div>
-                    <div className={'col-lg-3 col-md-5 col-12'}>
+                    <div className={'col-lg-3 col-md-5 col-12 surprisedSideWrap'}>
                         <img src={'../../images/mainPage4.png'}/>
                     </div>
-                    <div className={'intervalImg col-6'}>
+                    <div className={'intervalImg col-lg-6 col-12'}>
                         <IntervalImg/>
                     </div>
-                    <div className={'col-lg-3 col-md-5 col-12'}>
+                    <div className={'col-lg-3 col-md-5 col-12 surprisedSideWrap'}>
                         <img src={'../../images/mainPage5.png'}/>
                     </div>
                 </div>

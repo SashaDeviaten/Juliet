@@ -21,7 +21,7 @@ class Header extends React.PureComponent {
                         <div className={'col-lg-7 col-12 order-lg-1 order-2'}>
                             <MainMenu/>
                         </div>
-                        <div className={'col-lg-3 col-sm-6 col-12 order-1'}>
+                        <div className={'col-lg-3 col-sm-6 col-12 order-1 mainInfoWrap'}>
                             <MainInfo/>
                         </div>
                     </div>
