@@ -11,7 +11,6 @@ const images = [
     '../../images/clients/sTZRUCxkCTk.jpg',
     '../../images/clients/taAGOyJTF6M.jpg',
     '../../images/clients/x0n8exq0mDE.jpg',
-    '../../images/clients/YdQV2JIIFMs.jpg',
     '../../images/clients/FuyY7H4bLDk.jpg',
     '../../images/clients/5zVMi8_U4BI.jpg',
     '../../images/clients/CtbGNPc7bOQ.jpg',

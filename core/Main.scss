@@ -32,28 +32,17 @@ body {
     50% { box-shadow: 5px 5px 80px blue; background-color: rgba(255, 0, 255, 0.15); color: blue}
     to { box-shadow: 5px 5px 80px magenta; background-color: rgba(110, 177, 255, 0.15); color: magenta}
   }
-  .star {
-    height: 25px;
-    width: 25px;
-    margin: 2px;
-    display: inline-block;
-    clip-path: polygon(
-                    50% 0%,
-                    63% 38%,
-                    100% 38%,
-                    69% 59%,
-                    82% 100%,
-                    50% 75%,
-                    18% 100%,
-                    31% 59%,
-                    0% 38%,
-                    37% 38%
-    );
-    background-color: gray;
-  }
 
-  .star.light {
-    background-color: yellow;
+  .pageContent {
+    @media (max-width: 991px) {
+      margin-top: 235px;
+    }
+    @media (max-width: 768px) {
+      margin-top: 185px;
+    }
+    @media (max-width: 576px) {
+      margin-top: 380px;
+    }
   }
 
   .flex {
@@ -66,8 +55,10 @@ body {
 
   .tile {
     border-radius: 10px;
-    margin: 40px 20px;
-    width: 100%;
-    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @media (max-width: 576px) {
+      margin: 20px 30px
+    }
   }
 }

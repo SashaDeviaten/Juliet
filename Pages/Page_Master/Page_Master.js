@@ -14,11 +14,11 @@ class Page_Master extends React.PureComponent {
 
         <div className={mainClassName}>
             <div className={'container'}>
-                <div className={'row contentWrap'}>
-                    <div className={'master__photo col-3'}>
+                <div className={'row tile even'}>
+                    <div className={'master__photo col-lg-3'}>
                         <img src={'../../images/master2.png'}/>
                     </div>
-                    <div className={'col-6'}>
+                    <div className={'col-lg-6'}>
                         <div className={'master__name'}>
                             Девятень Татьяна
                         </div>
@@ -31,14 +31,15 @@ class Page_Master extends React.PureComponent {
                             <img src={'../../images/master-icon1.png'}/>
                         </div>
                     </div>
-                    <div className={'master__photo col-3'}>
+                    <div className={'master__photo col-lg-3'}>
                         <img src={'../../images/master1.png'}/>
                     </div>
                 </div>
-                <div className={'row contentWrap prize'}>
+                <div className={'row tile odd'}>
                 <div className={'col-12 images'}>
                     <div className={'title'}>Приз зрительских симпатитий IIго чемпионата России по грумингу</div>
-                    <img src={'../../images/master5.png'}/>
+                    <img className={'longPrizeImg'} src={'../../images/master5.png'}/>
+                    <img className={'shortPrizeImg'} src={'../../images/master3.png'}/>
                 </div>
                 </div>
             </div>

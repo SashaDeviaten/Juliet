@@ -17,7 +17,9 @@ class Main extends React.PureComponent {
             <Header/>
             <MainSwiper/>
             {/*<FlyGif/>*/}
-            <PagesRouter/>
+            <div className={'pageContent'}>
+                <PagesRouter/>
+            </div>
             <Footer/>
         </div>
 

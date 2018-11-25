@@ -14,7 +14,7 @@ class MainPage extends React.PureComponent {
 
         <div className={mainClassName}>
             <div className={'container'}>
-                <div className={mainClassName + '__tile odd row'}>
+                <div className={mainClassName + ' tile odd row'}>
                     <div className={'col-md-3 col-sm-12 order-md-1 order-2'}>
                         <img src={'../../images/mainPage2.png'}/>
                     </div>
@@ -25,7 +25,7 @@ class MainPage extends React.PureComponent {
             </div>
                 </div>
 
-                <div className={mainClassName + '__tile even row contentWrap'}>
+                <div className={mainClassName + ' tile even row'}>
                     <div className={'col-md-9 col-sm-12'}>
                         <div className={'title'}>
                         Ваш пёсик грустит?<br/> Может быть, его просто нужно подстричь?
@@ -45,7 +45,7 @@ class MainPage extends React.PureComponent {
                     </div>
                 </div>
 
-                <div className={mainClassName + '__tile odd row contentWrap'}>
+                <div className={mainClassName + ' tile odd row'}>
 
                     <div className={'col-md-3 col-sm-12'}>
                         <img src={'../../images/mainPage3.png'}/>
@@ -71,7 +71,7 @@ class MainPage extends React.PureComponent {
                     </div>
                 </div>
 
-                <div className={mainClassName + '__tile odd row contentWrap slideShowWrap'}>
+                <div className={mainClassName + ' tile odd row slideShowWrap'}>
 
                     <div className={'title centerText col-12'}>
                         Почему не стоит пытаться подстричь питомца самому...
