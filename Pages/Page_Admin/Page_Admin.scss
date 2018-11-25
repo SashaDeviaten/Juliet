@@ -1,3 +1,30 @@
 .Page_Admin {
+  .password {
+    margin: 50px auto;
+    input {
+      height: 30px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    button {
+      margin-left: 15px;
+      height: 30px;
+      width: 100px;
+      border-radius: 5px;
+      background-color: blue;
+      border: none;
+      color: white;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .codesTitle {
+    font-weight: bold;
+    font-size: 30px;
+  }
 
 }
