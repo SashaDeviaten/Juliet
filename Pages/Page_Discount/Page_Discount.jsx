@@ -15,10 +15,10 @@ class Page_Discount extends PureComponent {
             <div className={mainClassName}>
                 <div className={'container'}>
                     <div className={mainClassName + ' row odd tile'}>
-                        <div className={'col-md-3 col-12'}>
-                            <img src={'../../images/discount/discount3.jpg'}/>
+                        <div className={'col-lg-3 col-12 order-lg-1 order-2'}>
+                                <img src={'../../images/discount/discount3.jpg'}/>
                         </div>
-                        <div className={'col-md-9 col-12 flex'}>
+                        <div className={'col-lg-9 col-12 flex order-lg-2 order-1'}>
                             <div className={'ma'}>
                                 <div className={'discountHeader'}>Акция для новичков!</div>
                                 <div className={'discountDescription'}>
@@ -30,7 +30,7 @@ class Page_Discount extends PureComponent {
                         </div>
                     </div>
                     <div className={mainClassName + ' row even tile'}>
-                        <div className={'col-md-9 col-12 flex'}>
+                        <div className={'col-lg-9 col-12 flex'}>
                             <div className={'ma'}>
                                 <div className={'discountHeader'}>Приводи друзей!</div>
                                 <div className={'discountDescription'}>
@@ -39,16 +39,16 @@ class Page_Discount extends PureComponent {
                                 </div>
                             </div>
                         </div>
-                        <div className={'col-md-3 col-12'}>
+                        <div className={'col-lg-3 col-12'}>
                             <img className={'reviewsPhoto'}
                                  src={'../../images/discount/discount2.jpg'}/>
                         </div>
                     </div>
                     <div className={mainClassName + ' row odd tile'}>
-                        <div className={'col-md-3 col-12'}>
+                        <div className={'col-lg-3 col-12 order-lg-1 order-2'}>
                             <img src={'../../images/discount/discount1.jpg'}/>
                         </div>
-                        <div className={'col-md-9 col-12 flex'}>
+                        <div className={'col-lg-9 col-12 flex  order-lg-2 order-1'}>
                             <div className={'ma'}>
                                 <div className={'discountHeader'}>Поймай скидку!</div>
                                 <div className={'discountDescription'}>

@@ -1,9 +1,16 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
 
 .Page_Discount {
+  .tile {
+    padding: 20px;
+  }
   img {
     max-width: 100%;
     margin-bottom: -24px;
+    @media (max-width: 991px) {
+      display: block;
+      margin: 0 auto -20px;
+    }
   }
   .discountHeader {
     font-size: 36px;
