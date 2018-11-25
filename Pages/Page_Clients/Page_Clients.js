@@ -18,6 +18,10 @@ const images = [
     '../../images/clients/LyvoG0hsfXs.jpg',
     '../../images/clients/poaazStHgCk.jpg',
     '../../images/clients/YrVhG2YRUqA.jpg',
+    '../../images/clients/5VDAb2RbLfs.jpg',
+    '../../images/clients/Oj8RTuGs3M0.jpg',
+    '../../images/clients/VLYzSGQLTnI.jpg',
+    '../../images/clients/W2B0bZ2U7EA.jpg',
 ];
 
 
