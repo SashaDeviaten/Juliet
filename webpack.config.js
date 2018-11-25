@@ -2,8 +2,10 @@ const path = require('path');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = { 
-    entry: "./App.js", // основной файл приложения
+module.exports = {
+    entry: {
+        main: ['babel-polyfill', './App.js']
+    },
     output:{ 
         path: __dirname, // путь к каталогу выходных файлов
         filename: "bundle.js"  // название создаваемого файла 
