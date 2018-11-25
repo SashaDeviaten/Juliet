@@ -23,11 +23,11 @@ class Page_Reviews extends PureComponent {
             <div className={mainClassName}>
                 <div className={'container'}>
                     <div className={mainClassName + ' row odd tile'}>
-                        <div className={'col-md-3 col-12'}>
+                        <div className={'col-lg-3 col-md-4 col-12'}>
                             <img className={'reviewsPhoto'}
                                  src={'../../images/reviews/PlFpVpLOips.jpg'}/>
                         </div>
-                        <div className={'col-md-9 col-12 flex'}>
+                        <div className={'col-lg-9 col-md-8 col-12 flex'}>
                             <div className={'ma'}>
                                 <div className={'reviewsStarsWrap'}>{this.buildStars(5)}</div>
                                 <div className={'reviewsText'}>
@@ -43,7 +43,7 @@ class Page_Reviews extends PureComponent {
                         </div>
                     </div>
                     <div className={mainClassName + ' row even tile'}>
-                        <div className={'col-md-9 col-12 flex'}>
+                        <div className={'col-lg-9 col-md-8 col-12 flex'}>
                             <div className={'ma'}>
                                 <div className={'reviewsStarsWrap'}>{this.buildStars(4)}</div>
                                 <div className={'reviewsText'}>
@@ -54,7 +54,7 @@ class Page_Reviews extends PureComponent {
                                 <div className={'reviewsDate'}>14.11.2018</div>
                             </div>
                         </div>
-                        <div className={'col-md-3 col-12'}>
+                        <div className={'col-lg-3 col-md-4 col-12'}>
                             <img className={'reviewsPhoto'}
                                  src={'../../images/reviews/jQ81c1QgZ0.jpg'}/>
                         </div>
