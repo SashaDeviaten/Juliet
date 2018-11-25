@@ -1,9 +1,11 @@
 ﻿import { combineReducers } from 'redux';
 
-import flyGif from "../reducers/flyGif";
+import rdFlyGif from "../reducers/rdFlyGif";
+import rdAdmin from "../reducers/rdAdmin";
 
 let combinedReducer=combineReducers({
-    flyGif,
+    flyGif: rdFlyGif,
+    admin: rdAdmin,
 });
 
 export default combinedReducer;

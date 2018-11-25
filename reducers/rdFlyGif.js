@@ -8,7 +8,7 @@ const initialState = {
 
 };
 
-const flyGif = (state = initialState, action) => {
+const frFlyGif = (state = initialState, action) => {
     switch (action.type) {
         case SHOW_FLY_GIF:
             return Object.assign({}, state, {
@@ -24,4 +24,4 @@ const flyGif = (state = initialState, action) => {
     }
 };
 
-export default flyGif;
+export default frFlyGif;
