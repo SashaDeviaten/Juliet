@@ -97,7 +97,8 @@ class FlyGif extends PureComponent {
     catchHandler = () => {
             if (confirm('Получить код для скидки?')) {
                 const code = generateCode();
-                // isoFetch
+                alert(`Ваш код ${code}`);
+                this.block()
             }
             this.block()
     };
