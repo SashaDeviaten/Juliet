@@ -3,13 +3,18 @@ import './Page_Admin.scss';
 import {connect} from "react-redux";
 import verifiedAdmin from "../../actions/verifiedAdmin";
 import blockFlyGif from "../../actions/blockFlyGif";
+import {getCodes} from "../../core/fetch";
 
 
 class Page_Admin extends PureComponent {
 
     componentDidMount () {
-        window.scrollTo(0, 360)
+        window.scrollTo(0, 360);
     }
+
+    state = {
+        codes: []
+    };
 
     mainClassName = 'Page_Admin';
     passsword = null;
@@ -21,11 +26,23 @@ class Page_Admin extends PureComponent {
     checkPassword = () => {
         if (this.password === 'Vojstom') {
             this.props.verifiedAdmin();
-            this.props.blockFlyGif()
+            this.props.blockFlyGif();
+            getCodes().then(codes => this.setState({codes}))
         }
         else {
             alert('Неверный пароль')
         }
+    };
+
+    buildCodesTable = () => {
+        return <Fragment>
+            {this.state.codes.map(({code, date}) => {
+                return <div className={'codeRow'} key={code}>
+                    <div className={'code'}>{code}</div>
+                    <div className={'codeDat'}>{date}</div>
+                </div>
+            })}
+        </Fragment>
     };
 
 
@@ -40,10 +57,14 @@ class Page_Admin extends PureComponent {
             <div className={mainClassName}>
                 <div className={'container'}>
                     <div className={mainClassName + ' row'}>
-                        {admin ? <Fragment>
+                        {admin ? <div className={'codes'}>
                                 <div className={'codesTitle'}>Активные коды</div>
-                                <div>tut budut cody</div>
-                            </Fragment>
+                                <div className={'codesTable'}>
+                                    <div className={'codesHeader'}>Код</div>
+                                    <div className={'codesHeader'}>Дата</div>
+                                    <div className={'codesTableWrap'}>{this.buildCodesTable()}</div>
+                                </div>
+                            </div>
                             : <div className={'password'}>
                                 <input placeholder={'Введите пароль'}
                                                type={'password'}

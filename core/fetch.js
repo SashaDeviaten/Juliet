@@ -1,5 +1,6 @@
 import {default as isoFetch} from 'isomorphic-fetch';
 
+const key = 'DEVIATEN_JULIET_PROJECT';
 
 const uniFetch = options => {
 
@@ -43,4 +44,74 @@ const fetchPromise = options => new Promise((resolve, reject) => uniFetch({
     cbGetData: data => resolve(data),
 }));
 
-export {fetchPromise};
+export const addCodeFetch = async code => {
+    getCodes().then(codesArr => {
+        let now = new Date();
+        let date = '' + now.getDate() + '.' + now.getMonth() + '.' + now.getFullYear();
+        codesArr.push({code, date});
+        setCodes(codesArr)
+    });
+};
+
+export const getCodes = async () => {
+    let answer;
+
+    let usp = new URLSearchParams();
+    usp.append('f', 'READ');
+    usp.append('n', key);
+
+    try {
+        answer = await fetchPromise({
+            fetchOptions: {
+                method: 'POST',
+                body: usp,
+            }
+        });
+    } catch (e) {
+        console.log('error', e);
+    }
+
+    return JSON.parse(answer.result);
+};
+
+const lockGet = async (updatePassword) => {
+
+    let usp = new URLSearchParams();
+    usp.append('f', 'LOCKGET');
+    usp.append('n', key);
+    usp.append('p', String(updatePassword));
+
+    try {
+        await fetchPromise({
+            fetchOptions: {
+                method: 'POST',
+                body: usp,
+            }
+        });
+    } catch (e) {
+        console.log('error', e);
+    }
+};
+
+export const setCodes = async (codes) => {
+
+    const updatePassword = Math.random();
+    await lockGet(updatePassword);
+
+    let usp = new URLSearchParams();
+    usp.append('f', 'UPDATE');
+    usp.append('n', key);
+    usp.append('v', JSON.stringify(codes));
+    usp.append('p', String(updatePassword));
+
+    try {
+        await fetchPromise({
+            fetchOptions: {
+                method: 'POST',
+                body: usp,
+            }
+        });
+    } catch (e) {
+        console.log('error', e);
+    }
+};

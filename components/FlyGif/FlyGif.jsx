@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {generateCode, getRandomInt} from '../../utils/utils';
 import showFlyGif from "../../actions/showFlyGif";
 import blockFlyGif from "../../actions/blockFlyGif";
-import {fetchPromise} from "../../core/fetch";
+import {addCodeFetch, fetchPromise, getCodes, setCodes} from "../../core/fetch";
 
 const RAF = window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -34,7 +34,6 @@ class FlyGif extends PureComponent {
         this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
         window.addEventListener('blur', this.clearGifTimeout);
         window.addEventListener('focus', this.setGifTimeout)
-        this.addCodeFetch()
     }
 
     componentWillUnmount () {
@@ -95,30 +94,17 @@ class FlyGif extends PureComponent {
 
     };
 
-    addCodeFetch = async (code) => {
-        const StringName = 'DEVIATEN_CRAZY_MIND_RECORDS';
-        let answer;
+    addCode = async (code) => {
 
-        try {
-            answer = await fetchPromise({
-                fetchOptions: {
-                    method: 'POST',
-                    // headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                    //     'Accept': 'application/json, text/javascript'},
-                    body: JSON.stringify({f: 'READ', n: StringName}),
-                }
-            });
-        } catch (e) {
-            console.log('error', e);
-        }
-        console.log('answer addCodeFetch', answer);
-        // alert(`Ваш код ${code}`);
+        await addCodeFetch(code);
+
+        alert(`Ваш код ${code}`);
     };
 
     catchHandler = () => {
             if (confirm('Получить код для скидки?')) {
                 const code = generateCode();
-                this.addCodeFetch(code);
+                this.addCode(code);
             }
             this.block()
     };

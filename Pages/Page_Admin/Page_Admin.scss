@@ -22,9 +22,24 @@
       }
     }
   }
-  .codesTitle {
-    font-weight: bold;
-    font-size: 30px;
+  .codes {
+    margin: 50px auto;
+    .codesTitle {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .codesTable {
+      display: flex;
+      div {
+        flex: 0 0 auto
+      }
+    }
+    .codesHeader {
+      font-weight: bold;
+      font-size: 20px;
+    }
   }
+
 
 }
