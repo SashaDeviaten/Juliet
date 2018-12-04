@@ -5,6 +5,7 @@ import {generateCode, getRandomInt} from '../../utils/utils';
 import showFlyGif from "../../actions/showFlyGif";
 import blockFlyGif from "../../actions/blockFlyGif";
 import {addCodeFetch, fetchPromise, getCodes, setCodes} from "../../core/fetch";
+import {customConfirm} from "../Modals/CustomConfirm/CustomConfirm.jsx";
 
 const RAF = window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -61,17 +62,24 @@ class FlyGif extends PureComponent {
         })
     };
 
+    confirmBlock = async () => {
+        (await customConfirm({
+                content: 'Заблокировать летающую картинку со скидкой?',
+            })) ? this.block() : this.hideGif()
+
+    };
+
+
     hideGif = () => {
-        if (this.isFirstTime) {
-            this.isFirstTime = false;
-            if (confirm('Заблокировать летающую картинку со скидкой?')) {
-                this.block();
-                return
-            }
+        if (!this.isFirstTime) {
+            this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
+            this.props.hideFlyGif();
+            this.setState({on: false})
         }
-        this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
-        this.props.hideFlyGif();
-        this.setState({on: false})
+        else {
+            this.isFirstTime = false;
+            this.confirmBlock()
+        }
     };
 
 
