@@ -106,15 +106,21 @@ class FlyGif extends PureComponent {
 
         await addCodeFetch(code);
 
-        alert(`Ваш код ${code}`);
+        customConfirm({
+            content: `Ваш код ${code}`,
+            confirm: 'Ок',
+            alert: true
+        })
     };
 
-    catchHandler = () => {
-            if (confirm('Получить код для скидки?')) {
-                const code = generateCode();
-                this.addCode(code);
-            }
-            this.block()
+    catchHandler = async () => {
+        if (await customConfirm({
+                content: 'Получить код для скидки?',
+            })) {
+            const code = generateCode();
+            this.addCode(code);
+        }
+        this.block()
     };
 
     block = () => {

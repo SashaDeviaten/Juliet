@@ -15,9 +15,11 @@ class CustomConfirm extends PureComponent {
         confirm: PropTypes.any,
         resolve: PropTypes.func,
         reject: PropTypes.func,
+        alert: PropTypes.bool
     };
 
     static defaultProps = {
+        alert: false,
         confirm: 'Да',
         cancel: 'Нет',
     };
@@ -68,7 +70,7 @@ class CustomConfirm extends PureComponent {
                         {props.children}
                     </div>
                     <div className={'CustomModal__actions'}>
-                            <button className="modalAction cancelBtn" onClick={this.cancel}>{props.cancel}</button>
+                        {!props.alert && <button className="modalAction cancelBtn" onClick={this.cancel}>{props.cancel}</button>}
                             <button className="modalAction confirmBtn" onClick={this.confirm}>{props.confirm}</button>
                     </div>
                 </div>
