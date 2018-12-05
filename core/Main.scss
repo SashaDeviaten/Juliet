@@ -63,7 +63,24 @@ body {
   }
 
   .ic-close {
-    background-image: url('../images/icons/ic-close.svg');
+    background: url('../images/icons/ic-close.svg') no-repeat center;
+  }
+
+  button.modalAction {
+    min-width: 100px;
+    padding: 5px 0;
+    background: none;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
+    color:  rgba(255,255,255,0.6);
+    border: 2px solid rgba(0,0,0,0);
+    &:hover {
+      cursor: pointer;
+      color: blue;
+      border-color: blue ;
+      border-radius: 5px;
+    }
   }
 
 }

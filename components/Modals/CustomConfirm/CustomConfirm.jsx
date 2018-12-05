@@ -59,8 +59,8 @@ class CustomConfirm extends PureComponent {
                 onClose={this.cancel}
                 style={{top: window.pageYOffset + 'px'}}
             >
-                <div className={'modal'}>
-                    <i aria-hidden='true' className='ic-close icon'/>
+                <div className={'CustomModal__wrap'}>
+                    <i aria-hidden='true' className='ic-close' onClick={this.cancel}/>
                     <div className={'CustomModal__header'}>
                         {props.header}
                     </div>
@@ -68,12 +68,8 @@ class CustomConfirm extends PureComponent {
                         {props.children}
                     </div>
                     <div className={'CustomModal__actions'}>
-                        <div className={'btnCancel'}>
-                            <button className="button_40 button_dark" onClick={this.cancel}>{props.cancel}</button>
-                        </div>
-                        <div className={'btnConfirm'}>
-                            <button className="button_40 button_primary" onClick={this.confirm}>{props.confirm}</button>
-                        </div>
+                            <button className="modalAction cancelBtn" onClick={this.cancel}>{props.cancel}</button>
+                            <button className="modalAction confirmBtn" onClick={this.confirm}>{props.confirm}</button>
                     </div>
                 </div>
             </div>
