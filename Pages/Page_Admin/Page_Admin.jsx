@@ -4,12 +4,14 @@ import {connect} from "react-redux";
 import verifiedAdmin from "../../actions/verifiedAdmin";
 import blockFlyGif from "../../actions/blockFlyGif";
 import {getCodes} from "../../core/fetch";
+import {customConfirm} from "../../components/Modals/CustomConfirm/CustomConfirm.jsx";
 
 
 class Page_Admin extends PureComponent {
 
     componentDidMount () {
         window.scrollTo(0, 360);
+        this.props.blockFlyGif()
     }
 
     state = {
@@ -26,11 +28,14 @@ class Page_Admin extends PureComponent {
     checkPassword = () => {
         if (this.password === 'Vojstom') {
             this.props.verifiedAdmin();
-            this.props.blockFlyGif();
             getCodes().then(codes => this.setState({codes}))
         }
         else {
-            alert('Неверный пароль')
+            customConfirm({
+                content: `Неверный пароль`,
+                confirm: 'Ок',
+                alert: true
+            });
         }
     };
 

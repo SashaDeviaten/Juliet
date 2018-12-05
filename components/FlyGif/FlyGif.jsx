@@ -31,6 +31,10 @@ class FlyGif extends PureComponent {
     speedY = 4;
     isFirstTime=true;
 
+    componentWillUpdate(nextProps) {
+        if (nextProps.isBlocked) this.block()
+    }
+
     componentDidMount () {
         this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
         window.addEventListener('blur', this.clearGifTimeout);
@@ -142,7 +146,9 @@ class FlyGif extends PureComponent {
 }
 
 export default connect(
-    null,
+    state => ({
+        isBlocked: state.flyGif.isBlocked
+    }),
     dispatch => ({
         showFlyGif: () => dispatch(showFlyGif(true)),
         hideFlyGif: () => dispatch(showFlyGif(false)),
