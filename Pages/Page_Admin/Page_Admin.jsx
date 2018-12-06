@@ -3,7 +3,7 @@ import './Page_Admin.scss';
 import {connect} from "react-redux";
 import verifiedAdmin from "../../actions/verifiedAdmin";
 import blockFlyGif from "../../actions/blockFlyGif";
-import {getCodes} from "../../core/fetch";
+import {getCodes, removeCodeFetch} from "../../core/fetch";
 import {customConfirm} from "../../components/Modals/CustomConfirm/CustomConfirm.jsx";
 
 
@@ -32,19 +32,28 @@ class Page_Admin extends PureComponent {
         }
         else {
             customConfirm({
-                content: `Неверный пароль`,
+                content: 'Неверный пароль',
                 confirm: 'Ок',
                 alert: true
             });
         }
     };
 
+    deleteItem = async e => {
+        let codes = [...this.state.codes];
+        const removeIndex = +e.target.dataset.index;
+        await removeCodeFetch(removeIndex);
+        codes.splice(removeIndex, 1);
+        this.setState({codes});
+    };
+
     buildCodesTable = () => {
         return <Fragment>
-            {this.state.codes.map(({code, date}) => {
+            {this.state.codes.map(({code, date}, i) => {
                 return <div className={'codeRow'} key={code}>
-                    <div className={'code'}>{code}</div>
-                    <div className={'codeDat'}>{date}</div>
+                    <div className={'code cell'}>{code}</div>
+                    <div className={'codeDat cell'}>{date}</div>
+                    <div className={'action cell'}><button data-index={i} onClick={this.deleteItem}>Удалить</button></div>
                 </div>
             })}
         </Fragment>
@@ -65,8 +74,10 @@ class Page_Admin extends PureComponent {
                         {admin ? <div className={'codes'}>
                                 <div className={'codesTitle'}>Активные коды</div>
                                 <div className={'codesTable'}>
-                                    <div className={'codesHeader'}>Код</div>
-                                    <div className={'codesHeader'}>Дата</div>
+                                    <div className={'codesHeaderWrap'}>
+                                        <div className={'codesHeader'}>Код</div>
+                                        <div className={'codesHeader'}>Дата</div>
+                                    </div>
                                     <div className={'codesTableWrap'}>{this.buildCodesTable()}</div>
                                 </div>
                             </div>
