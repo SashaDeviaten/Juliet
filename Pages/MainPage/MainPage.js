@@ -71,7 +71,7 @@ class MainPage extends React.PureComponent {
                     </div>
                 </div>
 
-                <div className={mainClassName + ' tile odd row slideShowWrap'}>
+                <div className={mainClassName + ' tile even row slideShowWrap'}>
 
                     <div className={'title centerText col-12'}>
                         Почему не стоит пытаться подстричь питомца самому...
