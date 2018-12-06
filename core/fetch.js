@@ -53,6 +53,13 @@ export const addCodeFetch = async code => {
     });
 };
 
+export const removeCodeFetch = async index => {
+    getCodes().then(codesArr => {
+        codesArr.splice(index, 1);
+        setCodes(codesArr)
+    });
+};
+
 export const getCodes = async () => {
     let answer;
 
