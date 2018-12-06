@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {generateCode, getRandomInt} from '../../utils/utils';
 import showFlyGif from "../../actions/showFlyGif";
 import blockFlyGif from "../../actions/blockFlyGif";
-import {addCodeFetch, fetchPromise, getCodes, setCodes} from "../../core/fetch";
+import {addCodeFetch, fetchPromise} from "../../core/fetch";
 import {customConfirm} from "../Modals/CustomConfirm/CustomConfirm.jsx";
 
 const RAF = window.requestAnimationFrame ||
@@ -43,7 +43,7 @@ class FlyGif extends PureComponent {
     }
 
     componentDidMount () {
-        this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
+        this.timeout = setTimeout(this.showGif, 10000 + getRandomInt()*1000);
         window.addEventListener('blur', this.clearGifTimeout);
         window.addEventListener('focus', this.setGifTimeout)
     }
@@ -53,7 +53,7 @@ class FlyGif extends PureComponent {
     }
 
     setGifTimeout = () => {
-        this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
+        this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*1000);
     };
 
     clearGifTimeout = () => {
@@ -65,8 +65,8 @@ class FlyGif extends PureComponent {
     setRef = (ref) => {this.gifRef = ref};
 
     showGif = () => {
-        if (this.timeout) clearTimeout(this.timeout);
-        this.timeout = setTimeout(this.hideGif, 3000 + getRandomInt()*10000);
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(this.hideGif, 3000 + getRandomInt()*1000);
         this.audioInterval = setInterval(() => yipAudio.play(), 1000);
         this.props.showFlyGif();
         this.setState({on: true}, () => {
@@ -88,7 +88,7 @@ class FlyGif extends PureComponent {
         clearInterval(this.audioInterval);
         if (!this.isFirstTime) {
             clearTimeout(this.timeout);
-            this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
+            this.timeout = setTimeout(this.showGif, 10000 + getRandomInt()*1000);
             this.props.hideFlyGif();
             this.setState({on: false})
         }
