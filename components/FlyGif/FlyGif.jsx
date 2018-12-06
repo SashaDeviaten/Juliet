@@ -17,6 +17,12 @@ const RAF = window.requestAnimationFrame ||
 
 const Doc = document.documentElement;
 
+const yipAudio = new Audio;
+
+if ( yipAudio.canPlayType("audio/mpeg")=="probably" ) {
+    yipAudio.src = "../../audio/yip.mp3";
+}
+
 
 class FlyGif extends PureComponent {
 
@@ -25,6 +31,7 @@ class FlyGif extends PureComponent {
     };
 
     timeout = null;
+    audioInterval = null;
     gifRef = null;
     mainClassName = 'FlyGif';
     speedX = 3;
@@ -51,13 +58,16 @@ class FlyGif extends PureComponent {
 
     clearGifTimeout = () => {
         this.setState({on: false});
-        clearTimeout(this.timeout)
+        clearTimeout(this.timeout);
+        if (this.audioInterval) clearInterval(this.audioInterval)
     };
 
     setRef = (ref) => {this.gifRef = ref};
 
     showGif = () => {
+        if (this.timeout) clearTimeout(this.timeout);
         this.timeout = setTimeout(this.hideGif, 3000 + getRandomInt()*10000);
+        this.audioInterval = setInterval(() => yipAudio.play(), 1000);
         this.props.showFlyGif();
         this.setState({on: true}, () => {
             this.gifRef.style.top = getRandomInt(20 + window.pageYOffset, Doc.clientHeight - (this.gifRef.clientHeight || 150) - 20) + 'px';
@@ -75,7 +85,9 @@ class FlyGif extends PureComponent {
 
 
     hideGif = () => {
+        clearInterval(this.audioInterval);
         if (!this.isFirstTime) {
+            clearTimeout(this.timeout);
             this.timeout = setTimeout(this.showGif, 3000 + getRandomInt()*10000);
             this.props.hideFlyGif();
             this.setState({on: false})
